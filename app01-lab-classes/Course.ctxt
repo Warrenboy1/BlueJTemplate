@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Course
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Course\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=title\ codeNumber
+comment1.target=Course(java.lang.String,\ java.lang.String)
+comment2.params=maxNumberOfCourses
+comment2.target=Course(int)
+comment3.params=newCourse
+comment3.target=void\ enrollCourse(Course)
+numComments=4
