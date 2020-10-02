@@ -14,3 +14,5 @@ student2.getCredits()
 student2.addCredits(20);
 student3.addCredits(20);
 student1.changeName("Daniel123");
+Daniel.print();
+Daniel123, student ID: 21906210, credits: 0, course:Web Development

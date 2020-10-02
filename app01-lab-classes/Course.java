@@ -15,22 +15,22 @@ public class Course
     
     public Course (String title, String codeNumber)
     {
-        codeNumber = "unknown";
+        codeNumber = "G400";
         title = "unknown";
-        
         
     }
     
     
     public Course (int maxNumberOfCourses)
     {
-        // initialise instance variables
+        
         capacity = maxNumberOfCourses;
     }
 
-    
-    public void enrollCourse(Course newCourse)
+    public void changeTitle(String replacementTitle)
     {
-        
+        title = replacementTitle;
     }
+    
+    
 }

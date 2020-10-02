@@ -13,19 +13,30 @@ public class Student
     private String name;
     // the student ID
     private String id;
+    
+    private String title;
+    
+    private ArrayList<Course> course;
     // the amount of credits for study taken so far
     private int credits;
-    
     /**
      * Create a new student with a given name and ID number.
      */
-    public Student(String fullName, String studentID)
+    public Student(String fullName, String studentID, String courseName)
     {
         name = fullName;
-        id = studentID;
+         id = studentID;
         credits = 0;
+        title = courseName;
+        
+        course = new ArrayList<Course>();
     }
 
+    public void changeTitle(String replacementTitle)
+    {
+        name = replacementTitle;
+    }
+    
     /**
      * Return the full name of this student.
      */
@@ -82,6 +93,8 @@ public class Student
      */
     public void print()
     {
-        System.out.println(name + ", student ID: " + id + ", credits: " + credits);
+        System.out.println(name + ", student ID: " + id + ", credits: " + credits + ", course:" + title);
     }
+    
+    
 }
