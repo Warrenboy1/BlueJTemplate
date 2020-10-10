@@ -1,3 +1,5 @@
+import java.util.Date;
+import java.text.SimpleDateFormat;
 /**
  * TicketMachine models a ticket machine that issues
  * flat-fare tickets.
@@ -24,8 +26,9 @@ public class TicketMachine extends Ticket
     private int total;
     
     
-   
     
+    private Date today = new Date();
+    private SimpleDateFormat formatter = new SimpleDateFormat("dd/MMM/yyyy");
     
 
      /**
@@ -33,7 +36,7 @@ public class TicketMachine extends Ticket
      */
     public TicketMachine()
     {
-        price = 0;
+        price = 0;  
         balance = 0;
         total = 0;
         
@@ -92,10 +95,12 @@ public class TicketMachine extends Ticket
         if(balance >= Aylesbury)
         {
             // Simulate the printing of a ticket.
+            
             System.out.println("########NO########");
             System.out.println("# The BlueJ Line");
             System.out.println("# Ticket Aylesbury");
             System.out.println("# " + Aylesbury + " cents.");
+            System.out.println("# Date ticket has been purchased: " + today);
             System.out.println("######REFUNDS######");
             System.out.println();
 
@@ -126,6 +131,7 @@ public class TicketMachine extends Ticket
             System.out.println("# The BlueJ Line");
             System.out.println("# Ticket Amersham");
             System.out.println("# " + Amersham + " cents.");
+            System.out.println("# Date ticket has been purchased: " + today);
             System.out.println("######REFUNDS######");
             System.out.println();
 
@@ -156,6 +162,7 @@ public class TicketMachine extends Ticket
             System.out.println("# The BlueJ Line");
             System.out.println("# Ticket High Wycombe");
             System.out.println("# " + HighWycombe + " cents.");
+            System.out.println("# Date ticket has been purchased: " + today);
             System.out.println("######REFUNDS######");
             System.out.println();
 
@@ -163,6 +170,7 @@ public class TicketMachine extends Ticket
             total = total + HighWycombe;
             // Reduce the balance by the price (in this case "High Wycombe").
             balance = balance - HighWycombe;
+            
             
         }
         else 
