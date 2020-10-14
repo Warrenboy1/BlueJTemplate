@@ -42,7 +42,7 @@ public class TicketMachine extends Ticket
         
     }
 
-     /**
+    /**
      * Return The amount of money already inserted for the
      * next ticket.
      */
@@ -90,9 +90,9 @@ public class TicketMachine extends Ticket
      * reduce the current balance by the ticket price. Print
      * an error message if more money is required.
      */
-    public void printTicketAylesbury()
+    public void printTicket()
     {
-        if(balance >= Aylesbury)
+        if(balance == Aylesbury)
         {
             // Simulate the printing of a ticket.
             
@@ -109,22 +109,7 @@ public class TicketMachine extends Ticket
             // Reduce the balance by the price (in this case "Aylesbury").
             balance = balance - Aylesbury;
         }
-        else 
-        {
-            System.out.println("You must insert at least: " +
-                               (Aylesbury - balance) + " more cents.");
-                    
-        }
-    }
-    
-    /**
-     * Print a ticket if enough money has been inserted, and
-     * reduce the current balance by the ticket price. Print
-     * an error message if more money is required.
-     */
-    public void printTicketAmersham()
-    {
-        if(balance >= Amersham)
+        else if(balance == Amersham)
         {
             // Simulate the printing of a ticket.
             System.out.println("########NO########");
@@ -134,28 +119,14 @@ public class TicketMachine extends Ticket
             System.out.println("# Date ticket has been purchased: " + today);
             System.out.println("######REFUNDS######");
             System.out.println();
-
+            
             // Update the total collected with the price.
             total = total + Amersham;
-            // Reduce the balance by the price (in this case "Amersham").
+            // Reduce the balance by the price (in this case "High Wycombe").
             balance = balance - Amersham;
+              
         }
-        else 
-        {
-            System.out.println("You must insert at least: " +
-                               (Amersham - balance) + " more cents.");
-                    
-        }
-    }
-    
-    /**
-     * Print a ticket if enough money has been inserted, and
-     * reduce the current balance by the ticket price. Print
-     * an error message if more money is required.
-     */
-    public void printTicketHighWycombe()
-    {
-        if(balance >= HighWycombe) 
+        else if(balance == HighWycombe) 
         {
             // Simulate the printing of a ticket.
             System.out.println("########NO########");
@@ -175,11 +146,12 @@ public class TicketMachine extends Ticket
         }
         else 
         {
-            System.out.println("You must insert at least: " +
-                               (HighWycombe - balance) + " more cents.");
+            System.out.println("You must insert the specific amount of more cents for the intended location. please refund balance if amount went over.");
                     
         }
     }
+    
+    
 
     /**
      * Return the money in the balance.

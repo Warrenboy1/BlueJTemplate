@@ -1,0 +1,67 @@
+TicketMachine ticketMa1 = new TicketMachine();
+ticketMa1.Amersham()
+£3.00
+    returned String "For a Ticket to Amersham, please put in £3.00"
+ticketMa1.Aylesbury()
+£2.20
+    returned String "For A Ticket to Aylesbury, please put in £2.20"
+ticketMa1.HighWycombe()
+£3.30
+    returned String "For a Ticket to High Wycombe, please put in £3.30"
+ticketMa1.getBalance()
+    returned int 0
+ticketMa1.insertMoney(220);
+We only accept 10p, 20p, £1 or £2. Thank you.  Not: 220
+ticketMa1.printTicket();
+You must insert the specific amount of more cents for the intended location. please refund balance if amount went over.
+ticketMa1.getBalance()
+    returned int 0
+ticketMa1.insertMoney(200);
+Balance : 200
+ticketMa1.insertMoney(200);
+Balance : 400
+ticketMa1.refundBalance()
+    returned int 400
+ticketMa1.insertMoney(200);
+Balance : 200
+ticketMa1.insertMoney(10);
+Balance : 210
+ticketMa1.printTicket();
+You must insert the specific amount of more cents for the intended location. please refund balance if amount went over.
+ticketMa1.insertMoney(10);
+Balance : 220
+ticketMa1.printTicket();
+########NO########
+# The BlueJ Line
+# Ticket Aylesbury
+# 220 cents.
+# Date ticket has been purchased: Wed Oct 14 06:41:24 BST 2020
+######REFUNDS######
+
+ticketMa1.insertMoney(200);
+Balance : 200
+ticketMa1.insertMoney(100);
+Balance : 300
+ticketMa1.insertMoney(10);
+Balance : 310
+ticketMa1.insertMoney(20);
+Balance : 330
+ticketMa1.printTicket();
+########NO########
+# The BlueJ Line
+# Ticket High Wycombe
+# 330 cents.
+# Date ticket has been purchased: Wed Oct 14 06:41:24 BST 2020
+######REFUNDS######
+
+ticketMa1.insertMoney(100);
+Balance : 100
+ticketMa1.insertMoney(200);
+Balance : 300
+ticketMa1.printTicket();
+########NO########
+# The BlueJ Line
+# Ticket Amersham
+# 300 cents.
+# Date ticket has been purchased: Wed Oct 14 06:41:24 BST 2020
+######REFUNDS######
