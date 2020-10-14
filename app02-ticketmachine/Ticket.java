@@ -1,18 +1,20 @@
 import java.util.Date;
 import java.text.SimpleDateFormat;
 /**
- * Write a description of class Ticket here.
- *
+ * This class is to show and feed the price of the individual station names
+ * to TicketMachine.
  * @author Warren
  * @version 08/10/2020
  */
-public class Ticket extends Coin 
+public class Ticket 
 {
    
-   public int Aylesbury = 220;
-   public int Amersham = 300;
-   public int HighWycombe = 330;
+  
    public String destination;
+   
+   public static final int Aylesbury = 220;
+   public static final int Amersham = 300;
+   public static final int HighWycombe = 330;
 
    /**
      * Ticket for Aylesbury including price.

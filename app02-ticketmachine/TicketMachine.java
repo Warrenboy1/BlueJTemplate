@@ -35,7 +35,7 @@ public class TicketMachine extends Ticket
      * Create a machine that issues tickets of the given price.
      */
     public TicketMachine()
-    {
+     {
         price = 0;  
         balance = 0;
         total = 0;
