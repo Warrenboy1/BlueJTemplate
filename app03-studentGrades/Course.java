@@ -3,23 +3,28 @@ import java.util.*;
 /**
  * Write a description of class Course here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Warren Frank-Danvers
+ * @version 20th Oct 2020
  */
 public class Course
 {
-    // instance variables - replace the example below with your own
+    // String Name
     private String name;
+    // String Code
     private String code;
+    // Character FinalGrade
     private char finalGrade;
+    // Int/Number FinalCredits
     private int finalCredits;
+    // Int/Number Mark
     private int mark;
+    // Int/Number FinalMark
     private int finalMark;
-    
+    //Arraylist for Class Module
     private ArrayList<Module> modules;
 
     /**
-     * Constructor for objects of class Course
+     * Constructor for objects of class Course for Name & Code.
      */
     public Course(String name, String code)
     {
@@ -29,11 +34,17 @@ public class Course
         modules = new ArrayList<Module>();
     }
     
+    /**
+     * Method to add newModule from the class Module Arraylist.
+     */
     public void addModule(Module newModule)
     {
         modules.add(newModule);
     }
     
+    /**
+     * Print Course name & Course code and run method within class Module printModule.
+     */
     public void printCourse()
     {
         System.out.println("Course name: " + name + ", Course code: " + code);
@@ -43,6 +54,9 @@ public class Course
         }
     }
     
+    /**
+     * Calculate finalCredits (starting from 0). 
+     */
     public void calculateCredits()
     {
         finalCredits = 0;
@@ -54,6 +68,9 @@ public class Course
         System.out.println("Final Credits: " + finalCredits);
     }
     
+    /**
+     * Calculate finalGrade using information from class Module.
+     */
     public void calculateFinalGrade()
     {
         finalMark = 0;
@@ -85,6 +102,9 @@ public class Course
         }
     }
     
+    /**
+     * return finalgrade as a character.
+     */
     public char getFinalGrade()
     {
         return finalGrade;

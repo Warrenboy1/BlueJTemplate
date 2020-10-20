@@ -3,54 +3,73 @@
 /**
  * Write a description of class Module here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Warren Frank-Danvers
+ * @version 20th Oct 2020
  */
 public class Module
 {
-    // instance variables - replace the example below with your own
-    private String name;
-    private String code;
-    private char finalGrade;
-    private int credits = 0;
-    private int mark;
+    // String name
+   private String name;
+    // String code
+   private String code;
+    // character finalGrade
+   private char finalGrade;
+    // Integar credits
+   private int credits = 0;
+    // Integar mark
+   private int mark;
 
-    /**
-     * Constructor for objects of class Module
+   /**
+     * Constructor for objects of class Module.
      */
-    public Module(String name, String code)
-    {
+   public Module(String name, String code)
+   {
         // initialise instance variables
         this.name = name;
         this.code = code;
         
-    }
+   }
     
-    public void printModule()
-    {
+   /**
+     * Print Module Name, Module Code, Mark & percentage to output machine.
+     */
+   public void printModule()
+   {
          System.out.println("Module Name: " + name + " , Module Code: " + code + " , Mark: " + mark + "%");
-    }
+   }
     
-    public void awardMark(int mark)
-    {
+   /**
+     * Award/add mark onto Module.
+     */
+   public void awardMark(int mark)
+   {
         this.mark = mark;
-    }
+   }
     
-    public void calculateCredits()
-    {
+   /**
+    * calculate credits, if mark is above 39 then credits = 15. if not then credits = 0 (which is set by default).
+    */
+   public void calculateCredits()
+   {
         if (mark > 39)
         {
             credits = 15;
         }
-    }
-    
-    public int getCredits()
-    {
+   }
+     
+   /**
+    * return credits value as integar.
+    */
+   public int getCredits()
+   {
         return credits;
-    }
+   }
     
-    public void calculateFinalGrade()
-    {
+   /**
+    * calculate final grade. if mark is over 0 and equal to or less than 100, then final grade should have a character either 'F,D,C,B,A'.
+    */
+   public void calculateFinalGrade()
+   {
         if (mark > 0 && mark <=39)
         {
             finalGrade = 'F';
@@ -75,17 +94,23 @@ public class Module
         {
             System.out.println("Marks should be between 0-100");
         }
-    }
+   }
     
-    public char getFinalGrade()
-    {
+   /**
+    * return finalgrade as character.
+    */
+   public char getFinalGrade()
+   {
         return finalGrade;
-    }
+   }
     
-    public int getMark()
-    {
+   /**
+    * return mark as integar.
+    */
+   public int getMark()
+   {
         return mark;
-    }
+   }
     
     
     
