@@ -20,9 +20,8 @@ public class Student
     // create a link to class Course so class Student uses information from Course
     private Course course;
     
-    
     /**
-     * Create a new student with a given name and ID number.
+     * Create a new student with a given FullName and  student ID number.
      */
     public Student(String fullName, String studentID)
     {
@@ -35,7 +34,7 @@ public class Student
     /**
      * Add a new course for this student
      */
-    public void addCourse(Course newCourse)
+    public void enrollCourse(Course newCourse)
     {
         course = newCourse;
     }
@@ -43,7 +42,7 @@ public class Student
      /**
      * Return the full name of this student.
      */
-    public String getName()
+    public String getFullName()
     {
         return name;
     }
@@ -63,15 +62,6 @@ public class Student
     {
         return id;
     }
-
-    /**
-     * Add some credit points to the student's accumulated credits.
-     */
-    public void addCredits(int additionalPoints)
-    {
-        credits += additionalPoints;
-    }
-
     
     /**
      * Return the number of credit points this student has accumulated.
@@ -79,16 +69,6 @@ public class Student
     public int getCredits()
     {
         return credits;
-    }
-
-    /**
-     * Return the login name of this student. The login name is a combination
-     * of the first four characters of the student's name and the first three
-     * characters of the student's ID number.
-     */
-    public String getLoginName()
-    {
-        return name.substring(0,4) + id.substring(0,3);
     }
     
     /**

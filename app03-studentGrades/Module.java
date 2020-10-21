@@ -19,12 +19,11 @@ public class Module
     // Integar mark
    private int mark;
 
-   /**
+    /**
      * Constructor for objects of class Module.
      */
    public Module(String name, String code)
    {
-        // initialise instance variables
         this.name = name;
         this.code = code;
         
@@ -66,9 +65,9 @@ public class Module
    }
     
    /**
-    * calculate final grade. if mark is over 0 and equal to or less than 100, then final grade should have a character either 'F,D,C,B,A'.
+    * return final grade as character. if mark is over 0 and equal to or less than 100, then final grade should have a character either 'F,D,C,B,A'.
     */
-   public void calculateFinalGrade()
+   public char calculateFinalGrade()
    {
         if (mark > 0 && mark <=39)
         {
@@ -94,15 +93,9 @@ public class Module
         {
             System.out.println("Marks should be between 0-100");
         }
-   }
-    
-   /**
-    * return finalgrade as character.
-    */
-   public char getFinalGrade()
-   {
         return finalGrade;
    }
+  
     
    /**
     * return mark as integar.
@@ -111,11 +104,5 @@ public class Module
    {
         return mark;
    }
-    
-    
-    
-    
-    
-
     
 }

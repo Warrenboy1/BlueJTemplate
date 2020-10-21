@@ -47,11 +47,11 @@ public class Course
      */
     public void printCourse()
     {
-        System.out.println("Course name: " + name + ", Course code: " + code);
         for (Module module : modules)
         {
             module.printModule();
         }
+        System.out.println("Course name: " + name + ", Course code: " + code);
     }
     
     /**
@@ -60,7 +60,6 @@ public class Course
     public void calculateCredits()
     {
         finalCredits = 0;
-        
         for (Module module : modules)
         {
             finalCredits = finalCredits + module.getCredits();
@@ -79,7 +78,7 @@ public class Course
         {
             mark = mark + module.getMark();
             finalMark = mark / 4;
-            if (finalMark > 0 && finalMark <=39)
+            if (finalMark >= 0 && finalMark <=39)
             {
                 finalGrade = 'F';
             }
@@ -110,7 +109,4 @@ public class Course
         return finalGrade;
     }
 
-    
-    
-    
 }
