@@ -1,0 +1,71 @@
+Student Aaron = new Student("Aaron Frank-Danvers", "21906212");
+Course CyberSecurity = new Course("Cyber Security", "452");
+Aaron.enrollCourse(CyberSecurity);
+Module ComputerArchitectures = new Module("Computer Architectures", "450");
+Module DigitalTechnologiesAndProfessionalPractice = new Module("Digital Technologies And Professional Practice", "454");
+Module ProgrammingConcepts = new Module("Programming Concepts", "452");
+Module WebDevelopment = new Module("Web Development", "456");
+ComputerArchitectures.awardMark(20);
+ComputerArchitectures.getMark()
+    returned int 20
+DigitalTechnologiesAndProfessionalPractice.awardMark(45);
+DigitalTechnologiesAndProfessionalPractice.getMark()
+    returned int 45
+ProgrammingConcepts.awardMark(55);
+ProgrammingConcepts.getMark()
+    returned int 55
+WebDevelopment.awardMark(89);
+WebDevelopment.getMark()
+    returned int 89
+ComputerArchitectures.calculateCredits();
+ComputerArchitectures.calculateFinalGrade()
+    returned char 'F'
+DigitalTechnologiesAndProfessionalPractice.calculateFinalGrade()
+    returned char 'D'
+ProgrammingConcepts.calculateFinalGrade()
+    returned char 'C'
+WebDevelopment.calculateFinalGrade()
+    returned char 'A'
+ComputerArchitectures.printModule();
+Module Name: Computer Architectures , Module Code: 450 , Mark: 20%
+DigitalTechnologiesAndProfessionalPractice.printModule();
+Module Name: Digital Technologies And Professional Practice , Module Code: 454 , Mark: 45%
+ProgrammingConcepts.printModule();
+Module Name: Programming Concepts , Module Code: 452 , Mark: 55%
+WebDevelopment.printModule();
+Module Name: Web Development , Module Code: 456 , Mark: 89%
+CyberSecurity.addModule(ComputerArchitectures);
+CyberSecurity.addModule(DigitalTechnologiesAndProfessionalPractice);
+CyberSecurity.addModule(ProgrammingConcepts);
+CyberSecurity.addModule(WebDevelopment);
+CyberSecurity.printCourse();
+Module Name: Computer Architectures , Module Code: 450 , Mark: 20%
+Module Name: Digital Technologies And Professional Practice , Module Code: 454 , Mark: 45%
+Module Name: Programming Concepts , Module Code: 452 , Mark: 55%
+Module Name: Web Development , Module Code: 456 , Mark: 89%
+Course name: Cyber Security, Course code: 452
+
+ComputerArchitectures.calculateCredits();
+DigitalTechnologiesAndProfessionalPractice.calculateCredits();
+ProgrammingConcepts.calculateCredits();
+WebDevelopment.calculateCredits();
+CyberSecurity.calculateCredits();
+Final Credits: 45
+
+CyberSecurity.getFinalGrade()
+    returned char 'C'
+CyberSecurity.printCourse();
+Module Name: Computer Architectures , Module Code: 450 , Mark: 20%
+Module Name: Digital Technologies And Professional Practice , Module Code: 454 , Mark: 45%
+Module Name: Programming Concepts , Module Code: 452 , Mark: 55%
+Module Name: Web Development , Module Code: 456 , Mark: 89%
+Course name: Cyber Security, Course code: 452
+Aaron.getCredits()
+    returned int 0
+Aaron.printFinalGrade();
+The final grade is: C
+Module Name: Computer Architectures , Module Code: 450 , Mark: 20%
+Module Name: Digital Technologies And Professional Practice , Module Code: 454 , Mark: 45%
+Module Name: Programming Concepts , Module Code: 452 , Mark: 55%
+Module Name: Web Development , Module Code: 456 , Mark: 89%
+Course name: Cyber Security, Course code: 452
