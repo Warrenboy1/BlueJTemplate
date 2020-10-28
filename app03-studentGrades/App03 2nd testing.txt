@@ -1,0 +1,71 @@
+Student student1 = new Student("wa", "21");
+Course course1 = new Course("computer", "34");
+Course course2 = new Course("web", "12");
+Course course3 = new Course("me", "74");
+Course course4 = new Course("yolo", "4211");
+Module module1 = new Module("computing", "23213");
+Module module2 = new Module("mymodule", "23141");
+Module module3 = new Module("finon", "142");
+Module module4 = new Module(".f,1mpnm", "2234");
+module1.awardMark(46);
+module1.calculateFinalGrade()
+    returned char 'D'
+module1.getCredits()
+    returned int 15
+module1.getMark()
+    returned int 46
+module1.printModule();
+Module Name: computing , Module Code: 23213 , Mark: 46%
+module2.awardMark(34);
+module2.calculateFinalGrade()
+    returned char 'F'
+module2.getCredits()
+    returned int 0
+module2.getMark()
+    returned int 34
+module2.printModule();
+Module Name: mymodule , Module Code: 23141 , Mark: 34%
+module3.awardMark(87);
+module3.calculateFinalGrade()
+    returned char 'A'
+module3.getCredits()
+    returned int 15
+module3.getMark()
+    returned int 87
+module3.printModule();
+Module Name: finon , Module Code: 142 , Mark: 87%
+module4.awardMark(99);
+module4.calculateFinalGrade()
+    returned char 'A'
+module4.getCredits()
+    returned int 15
+module4.getMark()
+    returned int 99
+module4.printModule();
+Module Name: .f,1mpnm , Module Code: 2234 , Mark: 99%
+course1.addModule(module1);
+course1.addModule(module2);
+course1.addModule(module3);
+course1.addModule(module4);
+course1.calculateCredits();
+Final Credits: 45
+course1.calculateFinalGrade();
+course1.getFinalGrade()
+    returned char 'B'
+course1.printCourse();
+Module Name: computing , Module Code: 23213 , Mark: 46%
+Module Name: mymodule , Module Code: 23141 , Mark: 34%
+Module Name: finon , Module Code: 142 , Mark: 87%
+Module Name: .f,1mpnm , Module Code: 2234 , Mark: 99%
+Course name: computer, Course code: 34
+
+student1.enrollCourse(course1);
+student1.print();
+wa, student ID: 21, credits: 0
+student1.printFinalGrade();
+The final grade is: B
+Module Name: computing , Module Code: 23213 , Mark: 46%
+Module Name: mymodule , Module Code: 23141 , Mark: 34%
+Module Name: finon , Module Code: 142 , Mark: 87%
+Module Name: .f,1mpnm , Module Code: 2234 , Mark: 99%
+Course name: computer, Course code: 34

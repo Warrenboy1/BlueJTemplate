@@ -1,7 +1,7 @@
 
 
 /**
- * Write a description of class Module here.
+ * This Class is to create different modules for the course class and calculate marks and award credits to students who have passed and recieve a finalgrade for their module
  *
  * @author Warren Frank-Danvers
  * @version 20th Oct 2020
@@ -44,24 +44,21 @@ public class Module
    {
         this.mark = mark;
    }
-    
-   /**
-    * calculate credits, if mark is above 39 then credits = 15. if not then credits = 0 (which is set by default).
-    */
-   public void calculateCredits()
-   {
-        if (mark > 39)
-        {
-            credits = 15;
-        }
-   }
      
    /**
-    * return credits value as integar.
+    * return credits value as integar. if mark is above 39 then credits = 15. if not then credits = 0.
     */
    public int getCredits()
    {
-        return credits;
+       if (mark > 39)
+       {
+           credits = 15;
+       }
+       else
+       {
+           credits = 0; 
+       }
+       return credits;
    }
     
    /**

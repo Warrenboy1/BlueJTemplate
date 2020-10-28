@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Course
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Course\ here.\r\n\r\n\ @author\ Warren\ Frank-Danvers\r\n\ @version\ 20th\ Oct\ 2020\r\n
+comment0.text=\r\n\ The\ Course\ Class\ represents\ the\ FinalGrade\ Students\ will\ receive\ from\ 4\ different\ modules\ calculated\ together.\r\n\r\n\ @author\ Warren\ Frank-Danvers\r\n\ @version\ 20th\ Oct\ 2020\r\n
 comment1.params=name\ code
 comment1.target=Course(java.lang.String,\ java.lang.String)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Course\ for\ Name\ &\ Code.\r\n
@@ -15,7 +15,7 @@ comment4.target=void\ calculateCredits()
 comment4.text=\r\n\ Calculate\ finalCredits\ (starting\ from\ 0).\ \r\n
 comment5.params=
 comment5.target=void\ calculateFinalGrade()
-comment5.text=\r\n\ Calculate\ finalGrade\ using\ information\ from\ class\ Module.\r\n
+comment5.text=\r\n\ Calculate\ finalGrade\ using\ information\ from\ class\ Module.\ make\ sure\ to\ use\ get\ method\ finalgrade\ for\ results\ returned\r\n
 comment6.params=
 comment6.target=char\ getFinalGrade()
 comment6.text=\r\n\ return\ finalgrade\ as\ a\ character.\r\n

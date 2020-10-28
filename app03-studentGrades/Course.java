@@ -1,7 +1,7 @@
 import java.util.*;
 
 /**
- * Write a description of class Course here.
+ * The Course Class represents the FinalGrade Students will receive from 4 different modules calculated together.
  *
  * @author Warren Frank-Danvers
  * @version 20th Oct 2020
@@ -23,12 +23,11 @@ public class Course
     //Arraylist for Class Module
     private ArrayList<Module> modules;
 
-    /**
+     /**
      * Constructor for objects of class Course for Name & Code.
      */
     public Course(String name, String code)
     {
-        // initialise instance variables
         this.name = name;
         this.code = code;
         modules = new ArrayList<Module>();
@@ -68,17 +67,18 @@ public class Course
     }
     
     /**
-     * Calculate finalGrade using information from class Module.
+     * Calculate finalGrade using information from class Module. make sure to use get method finalgrade for results returned
      */
     public void calculateFinalGrade()
     {
         finalMark = 0;
         mark = 0;
-        for (Module module : modules)
+         for (Module module : modules)
         {
             mark = mark + module.getMark();
-            finalMark = mark / 4;
-            if (finalMark >= 0 && finalMark <=39)
+        }
+        finalMark = mark / 4;
+        if (finalMark >= 0 && finalMark <=39)
             {
                 finalGrade = 'F';
             }
@@ -98,7 +98,6 @@ public class Course
             {
                 finalGrade = 'A';
             }
-        }
     }
     
     /**
