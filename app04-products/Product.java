@@ -7,11 +7,13 @@
 public class Product
 {
     // An identifying number for this product.
-    private int id;
+    public int id;
     // The name of this product.
-    private String name;
+    public String name;
     // The quantity of this product in stock.
-    private int quantity;
+    public int quantity;
+    
+    
 
     /**
      * Constructor for objects of class Product.
@@ -43,6 +45,14 @@ public class Product
     }
 
     /**
+     * Set a new name for this Product.
+     */
+    public void changeName(String replacementName)
+    {
+        name = replacementName;
+    }
+    
+    /**
      * @return The quantity in stock.
      */
     public int getQuantity()
@@ -58,6 +68,15 @@ public class Product
         return id + ": " +  name + " stock level: " + quantity;
     }
 
+    /**
+     * @return The id, name and quantity in stock.
+     */
+    public void printProductDetail()
+    {
+      System.out.println("ID Number: "+ id + ",Name: " +  name + 
+      " ,stock level: " + quantity);
+    }
+    
     /**
      * Restock with the given amount of this product.
      * The current quantity is incremented by the given amount.

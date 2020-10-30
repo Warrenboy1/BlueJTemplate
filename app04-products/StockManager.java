@@ -4,13 +4,16 @@ import java.util.ArrayList;
  * Manage the stock in a business.
  * The stock is described by zero or more Products.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Warren Frank-Danvers 
+ * @version 30th Oct 2020
  */
 public class StockManager
 {
     // A list of the products.
     private ArrayList<Product> stock;
+    private int amount;
+    
+    
 
     /**
      * Initialise the stock manager.
@@ -24,10 +27,45 @@ public class StockManager
      * Add a product to the list.
      * @param item The item to be added.
      */
-    public void addProduct(Product item)
+    public void addProduct(Product name)
     {
-        stock.add(item);
+        stock.add(name);
     }
+    
+    /**
+     * Remove a product from the list
+     */
+    public void removeProduct(int id)
+    {
+        for (Product product : stock)
+        {
+        if (product.id == id)
+        {
+            stock.remove(product);
+        }
+    }
+    }
+    
+    //if(amount > 0)[]if else ();
+    /**
+     * Sell a product from the list. verifying the id first.
+     * then input the amount sold.
+     * @param id The ID of the product.
+     * @param amount The amount the product has been sold by.
+     */
+    public void sellProduct(int id, int amount)
+    {
+        for (Product product : stock)
+        {
+            if (product.id == id && amount > 0)
+            {
+              product.quantity -= amount;
+              product.printProductDetail();
+            }
+        }
+    }
+    
+    
     
     /**
      * Receive a delivery of a particular product.
@@ -37,6 +75,31 @@ public class StockManager
      */
     public void delivery(int id, int amount)
     {
+        for (Product product : stock)
+        {
+            if (product.id == id)
+            {
+              product.increaseQuantity(amount);
+              product.getID();
+              product.getQuantity();
+            
+              product.printProductDetail();
+            }
+        }
+    }
+    
+    
+    public void searchProductName(String keyWord)
+    {
+        for (Product product : stock)
+         {
+            if (product.getName().contains(keyWord)!= false)  
+            {
+                System.out.println(product);
+                
+            }
+        }
+        
     }
     
     /**
@@ -44,9 +107,27 @@ public class StockManager
      * @return The identified product, or null if there is none
      *         with a matching ID.
      */
-    public Product findProduct(int id)
+    public Product findProductID(int id)
     {
+        for (Product product : stock)
+        {
+           if (product.id == id)
+            {
+               product.printProductDetail();
+           }
+        }
         return null;
+    }
+    
+    public void listAllProducts ()
+    {
+        for (Product product : stock)
+        {  
+           
+               product.printProductDetail();
+            
+        }
+        
     }
     
     /**
@@ -58,7 +139,19 @@ public class StockManager
      */
     public int numberInStock(int id)
     {
-        return 0;
+        for (Product product : stock)
+        {
+           if (product.id == id)
+           
+           {
+                product.printProductDetail();
+           }
+           else if (product.id != id)
+           {
+               System.out.println(" ");
+           }
+        }
+        return id;
     }
 
     /**
@@ -66,5 +159,51 @@ public class StockManager
      */
     public void printProductDetails()
     {
+       for (Product product : stock)
+       {
+           if(product != null) 
+           {
+               product.toString();
+        
+           }
+       }
+    }
+    
+    public void renameName(int id, String replacementName)
+    {
+        for (Product product : stock)
+        {
+            if (product.id == id)
+            {
+                product.changeName(replacementName);
+            }
+            
+        }
+    }
+    
+    public void printStockLevelsLow ()
+    {
+        for (Product product : stock) 
+        {
+            if (product.getQuantity() <5)
+            {
+                System.out.println(product); 
+            }
+        }
+    }
+    
+    public void topUpWith10 ()
+    {
+        for (Product product : stock)
+        {
+            if (product.getQuantity() < 5)
+            {
+                product.increaseQuantity(10);
+                System.out.println(product);
+            }
+        }
     }
 }
+    
+
+

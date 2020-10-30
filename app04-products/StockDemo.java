@@ -31,7 +31,7 @@ public class StockDemo
     public void demo()
     {
         // Show details of all of the products.
-        manager.printProductDetails();
+        manager.printProductDetails(); 
         // Take delivery of 5 items of one of the products.
         manager.delivery(132, 5);
         manager.printProductDetails();
@@ -77,7 +77,7 @@ public class StockDemo
      */
     public Product getProduct(int id)
     {
-        Product product = manager.findProduct(id);
+        Product product = manager.findProductID(id); 
         
         if(product == null) 
         {
