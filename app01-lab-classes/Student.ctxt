@@ -1,11 +1,12 @@
 #BlueJ class context
 comment0.target=Student
-comment0.text=\r\n\ The\ Student\ class\ represents\ a\ student\ in\ a\ student\ administration\ system.\r\n\ It\ holds\ the\ student\ details\ relevant\ in\ our\ context.\r\n\ \r\n\ @author\ Michael\ K\u00F6lling\ and\ David\ Barnes\r\n\ @version\ 2016.02.29\r\n
+comment0.text=\r\n\ The\ Student\ class\ represents\ a\ student\ in\ a\ student\ administration\ system.\r\n\ It\ holds\ the\ student\ details\ relevant\ in\ our\ context.\r\n\ \r\n\ @author\ Michael\ K\u00F6lling\ and\ David\ Barnes\r\n\ @version\ 2016.02.29\r\n\ modified\ by\ Warren\ Frank-Danvers\r\n\ Dated\ 01/11/2020\r\n
 comment1.params=fullName\ studentID\ courseName
 comment1.target=Student(java.lang.String,\ java.lang.String,\ java.lang.String)
 comment1.text=\r\n\ Create\ a\ new\ student\ with\ a\ given\ name\ and\ ID\ number.\r\n
 comment2.params=replacementTitle
 comment2.target=void\ changeTitle(java.lang.String)
+comment2.text=\r\n\ Change\ title\ to\ replacementTitle\r\n
 comment3.params=
 comment3.target=java.lang.String\ getName()
 comment3.text=\r\n\ Return\ the\ full\ name\ of\ this\ student.\r\n

@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=LabClass
-comment0.text=\r\n\ The\ LabClass\ class\ represents\ an\ enrolment\ list\ for\ one\ lab\ class.\ It\ stores\r\n\ the\ time,\ room\ and\ participants\ of\ the\ lab,\ as\ well\ as\ the\ instructor's\ name.\r\n\ \r\n\ @author\ Michael\ K\u00F6lling\ and\ David\ Barnes\r\n\ @version\ 2016.02.29\r\n\ modified\ by\ Derek\ Peacock\r\n\ dated\ 27/Sep/2020\r\n
+comment0.text=\r\n\ The\ LabClass\ class\ represents\ an\ enrolment\ list\ for\ one\ lab\ class.\ It\ stores\r\n\ the\ time,\ room\ and\ participants\ of\ the\ lab,\ as\ well\ as\ the\ instructor's\ name.\r\n\ \r\n\ @author\ Michael\ K\u00F6lling\ and\ David\ Barnes\r\n\ @version\ 2016.02.29\r\n\ modified\ by\ Warren\ Frank\ Danvers\r\n\ dated\ 01/11/2020\r\n
 comment1.params=maxNumberOfStudents
 comment1.target=LabClass(int)
 comment1.text=\r\n\ Create\ a\ LabClass\ with\ a\ maximum\ number\ of\ enrolments.\ All\ other\ details\r\n\ are\ set\ to\ default\ values.\r\n

@@ -6,6 +6,8 @@ import java.util.*;
  * 
  * @author Michael Kölling and David Barnes
  * @version 2016.02.29
+ * modified by Warren Frank-Danvers
+ * Dated 01/11/2020
  */
 public class Student
 {
@@ -32,6 +34,9 @@ public class Student
         course = new ArrayList<Course>();
     }
 
+    /**
+     * Change title to replacementTitle
+     */
     public void changeTitle(String replacementTitle)
     {
         name = replacementTitle;

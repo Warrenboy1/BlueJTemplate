@@ -1,10 +1,13 @@
 #BlueJ class context
 comment0.target=Course
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Course\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Course\ here.\r\n\r\n\ @author\ Warren\ Frank-Danvers\r\n\ @version\ 01/11/2020\r\n
 comment1.params=title\ codeNumber
 comment1.target=Course(java.lang.String,\ java.lang.String)
+comment1.text=\r\n\ Create\ a\ new\ Course\ with\ a\ given\ title\ and\ codenumber.\r\n
 comment2.params=maxNumberOfCourses
 comment2.target=Course(int)
+comment2.text=\r\n\ include\ max\ number\ of\ courses\ allowed\ within\ the\ course.\r\n
 comment3.params=replacementTitle
 comment3.target=void\ changeTitle(java.lang.String)
+comment3.text=\r\n\ Change\ title\ of\ course\ to\ replacementTitle.\r\n
 numComments=4
