@@ -21,6 +21,13 @@ public class StockDemo
         manager.addProduct(new Product(132, "Clock Radio"));
         manager.addProduct(new Product(37,  "Mobile Phone"));
         manager.addProduct(new Product(23,  "Microwave Oven"));
+        manager.addProduct(new Product(1, "Iphone"));
+        manager.addProduct(new Product(2, "Water Bottle"));
+        manager.addProduct(new Product(3, "Playstation 5"));
+        manager.addProduct(new Product(4, "AA Batteries"));
+        manager.addProduct(new Product(5, "Sticky Tape"));
+        manager.addProduct(new Product(53, "Head and Shoulders"));
+        manager.addProduct(new Product(76, "Deodorant"));
     }
     
     /**
