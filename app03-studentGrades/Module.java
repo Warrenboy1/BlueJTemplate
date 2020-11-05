@@ -1,5 +1,4 @@
 
-
 /**
  * This Class is to create different modules for the course class and calculate marks and award credits to students who have passed and recieve a finalgrade for their module
  *
@@ -44,6 +43,8 @@ public class Module
    {
         this.mark = mark;
    }
+   
+   
      
    /**
     * return credits value as integar. if mark is above 39 then credits = 15. if not then credits = 0.

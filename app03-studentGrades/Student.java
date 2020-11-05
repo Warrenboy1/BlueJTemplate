@@ -15,8 +15,8 @@ public class Student
     private String id;
     // the amount of credits for study taken so far
     private int credits;
-    
-    
+     
+     
     // create a link to class Course so class Student uses information from Course
     private Course course;
     
