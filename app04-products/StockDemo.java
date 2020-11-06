@@ -5,6 +5,9 @@
  * 
  * @author David J. Barnes and Michael Kölling.
  * @version 2016.02.29
+ * 
+ * modified by: Warren Frank-Danvers.
+ * Date: 06/11/2020
  */
 public class StockDemo
 {
@@ -38,10 +41,19 @@ public class StockDemo
     public void demo()
     {
         // Show details of all of the products.
-        manager.printProductDetails(); 
+        manager.printToString(); 
         // Take delivery of 5 items of one of the products.
-        manager.delivery(132, 5);
-        manager.printProductDetails();
+        manager.delivery(132, 8);
+        manager.delivery(37, 3);
+        manager.delivery(23, 7);
+        manager.delivery(1, 9);
+        manager.delivery(3, 7);
+        manager.delivery(2, 8);
+        manager.delivery(5, 5);
+        manager.delivery(4, 6);
+        manager.delivery(76, 4);
+        manager.delivery(53, 7);
+        manager.printToString();
     }
     
     /**
@@ -64,9 +76,10 @@ public class StockDemo
      * Show the before and after status of the product.
      * @param id The ID of the product being sold.
      */
-    public void sellProduct(int id)
+    public void sellAProduct(int id)
     {
         Product product = getProduct(id);
+       
         
         if(product != null) 
         {
@@ -74,6 +87,7 @@ public class StockDemo
             product.sellOne();
             showDetails(id);
         }
+    
     }
     
     /**
@@ -84,7 +98,7 @@ public class StockDemo
      */
     public Product getProduct(int id)
     {
-        Product product = manager.findProductID(id); 
+        Product product = manager.findProductID(id);  
         
         if(product == null) 
         {

@@ -3,6 +3,9 @@
  * 
  * @author David J. Barnes and Michael Kölling.
  * @version 2016.02.29
+ * 
+ * modified by: Warren Frank-Danvers.
+ * Date: 06/11/2020
  */
 public class Product
 {
@@ -12,7 +15,8 @@ public class Product
     public String name;
     // The quantity of this product in stock.
     public int quantity;
-    
+    // The Amount of this product which would like to be purchased.
+    public int amount;
     
 
     /**
@@ -25,7 +29,10 @@ public class Product
     {
         this.id = id;
         this.name = name;
+        //Quantity shows how much is in stock.
         quantity = 0;
+        //Amount stands for how much individual want of the product.
+        amount = 0;
     }
 
     /**
@@ -65,7 +72,7 @@ public class Product
      */
     public String toString()
     {
-        return id + ": " +  name + " stock level: " + quantity;
+        return id + ": Name" +  name + " ,stock level: " + quantity;
     }
 
     /**
@@ -83,11 +90,11 @@ public class Product
      * @param amount The number of new items added to the stock.
      *               This must be greater than zero.
      */
-    public void increaseQuantity(int amount)
+    public void increaseQuantity(int stock)
     {
-        if(amount > 0) 
+        if(stock > 0) 
         {
-            quantity += amount;
+            quantity += stock;
         }
         else 
         {
@@ -111,5 +118,28 @@ public class Product
             System.out.println(
                 "Attempt to sell an out of stock item: " + name);
         }
+    }
+    
+    /**
+     * Sell a amount of a product. 
+     * An error is reported if there appears to be no stock.
+     */
+    public void sellNumber(int amount)
+    {
+        if(quantity > 0) 
+        {
+            quantity -= amount;
+        }
+        else 
+        {
+            System.out.println(
+                "Attempt to sell an out of stock item: " + name);
+        }
+    }
+    
+    public int getAmount(int amount)
+    {
+        this.amount = amount;
+        return amount;
     }
 }

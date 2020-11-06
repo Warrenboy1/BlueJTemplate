@@ -4,14 +4,14 @@ import java.util.ArrayList;
  * Manage the stock in a business.
  * The stock is described by zero or more Products.
  * 
- * @author Warren Frank-Danvers 
- * @version 30th Oct 2020
+ * @author Warren Frank-Danvers.
+ * @version 30.10.2020
  */
 public class StockManager
 {
     // A list of the products.
     private ArrayList<Product> stock;
-    private int amount;
+    
     
     
 
@@ -33,7 +33,7 @@ public class StockManager
     }
     
     /**
-     * Remove a product from the list
+     * Remove a product from the list using id.
      */
     public void removeProduct(int id)
     {
@@ -43,24 +43,31 @@ public class StockManager
         {
             stock.remove(product);
         }
-    }
+        
+        }
     }
     
-    //if(amount > 0)[]if else ();
+    
     /**
      * Sell a product from the list. verifying the id first.
      * then input the amount sold.
      * @param id The ID of the product.
      * @param amount The amount the product has been sold by.
      */
-    public void sellProduct(int id, int amount)
+    public void sellAProduct(int id, int amount)
     {
         for (Product product : stock)
         {
-            if (product.id == id && amount > 0)
+            if (product.id == id && amount < product.quantity)
             {
               product.quantity -= amount;
               product.printProductDetail();
+            }
+            else if (product.id == id && amount > product.quantity)
+            {
+                System.out.println("Quantity is: " + product.quantity + 
+                "compared to amount selected for purchase: " + product.amount + " for ID: " +
+                product.id);
             }
         }
     }
@@ -88,7 +95,9 @@ public class StockManager
         }
     }
     
-    
+    /**
+     * search Product Name via a keyword.
+     */
     public void searchProductName(String keyWord)
     {
         for (Product product : stock)
@@ -115,10 +124,17 @@ public class StockManager
             {
                product.printProductDetail();
            }
+           else 
+           {
+               System.out.println("Item not Found");
+           }
         }
         return null;
     }
     
+    /**
+     * All Products get listed.
+     */
     public void listAllProducts ()
     {
         for (Product product : stock)
@@ -157,7 +173,7 @@ public class StockManager
     /**
      * Print details of all the products.
      */
-    public void printProductDetails()
+    public void printToString()
     {
        for (Product product : stock)
        {
@@ -169,6 +185,9 @@ public class StockManager
        }
     }
     
+    /**
+     * rename product with replacementname.
+     */
     public void renameName(int id, String replacementName)
     {
         for (Product product : stock)
@@ -181,8 +200,13 @@ public class StockManager
         }
     }
     
-    public void printStockLevelsLow ()
+     /**
+      * Print out Produts with less than 5 as Quantity.
+      */
+     public void printStockLevelsLow ()
     {
+        System.out.println
+        ("If no products printed then no products are below 5");
         for (Product product : stock) 
         {
             if (product.getQuantity() <5)
@@ -192,6 +216,10 @@ public class StockManager
         }
     }
     
+    
+    /**
+     * Increase Quantity of Products with less than 5. increased by 10.
+     */
     public void topUpWith10 ()
     {
         for (Product product : stock)
@@ -200,6 +228,58 @@ public class StockManager
             {
                 product.increaseQuantity(10);
                 System.out.println(product);
+            }
+        }
+    }
+    
+     /**
+     * Sell multiple products with the amount within certain products which 
+     * do not have an amount of 0,if they do then the quantity of the product
+     * will be reduced by amount specified.
+     */
+    public void sellMultipleProducts ()
+    {
+        for (Product product : stock)
+        {
+            if(product.amount < product.quantity)
+            {
+                product.quantity -= product.amount;
+                product.printProductDetail();
+            }
+            else if(product.amount == 0 
+            || product.quantity == 0)
+            {
+                System.out.println(
+                "Neither quantity: "+ product.quantity + ", or amount: " + 
+                product.amount + ", should be '0' for " + product.name);
+            }
+            
+        }
+    }
+    
+    /**
+     * input an ID to set an amount to. 
+     * To sell multiple products at one time instead of selling 1 at a time.
+     */
+    public void selectAmount(int id, int input)
+    {
+        for (Product product : stock)
+        {
+            if(product.id == id && product.amount == 0)
+            {
+                product.getAmount(input);
+                System.out.println("ID:" + id + "has an amount of " + input);
+            }
+            else if(product.id == id && 
+            product.amount > 0)
+            {
+                System.out.println(id + " has an amount of " + product.amount);
+            }
+            else if(product.id == id && product.amount < 0)
+            {
+                System.out.println(
+                "An Error has occured for " + id + 
+                "Please make sure to have an amount more then 0");
             }
         }
     }
