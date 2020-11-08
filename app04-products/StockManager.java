@@ -11,10 +11,7 @@ public class StockManager
 {
     // A list of the products.
     private ArrayList<Product> stock;
-    
-    
-    
-
+    private Product product;
     /**
      * Initialise the stock manager.
      */
@@ -37,13 +34,9 @@ public class StockManager
      */
     public void removeProduct(int id)
     {
-        for (Product product : stock)
-        {
         if (product.id == id)
         {
             stock.remove(product);
-        }
-        
         }
     }
     
@@ -82,9 +75,7 @@ public class StockManager
      */
     public void delivery(int id, int amount)
     {
-        for (Product product : stock)
-        {
-            if (product.id == id)
+         if (product.id == id)
             {
               product.increaseQuantity(amount);
               product.getID();
@@ -92,7 +83,6 @@ public class StockManager
             
               product.printProductDetail();
             }
-        }
     }
     
     /**
@@ -155,25 +145,23 @@ public class StockManager
      */
     public int numberInStock(int id)
     {
-        for (Product product : stock)
-        {
            if (product.id == id)
-           
            {
                 product.printProductDetail();
+                System.out.println("Number in Stock: " + product.quantity);
            }
            else if (product.id != id)
            {
-               System.out.println(" ");
+               System.out.println
+               ("ID not found. if not sure then use ListAllProducts method. ");
            }
-        }
-        return id;
+           return id;
     }
 
     /**
-     * Print details of all the products.
+     * return details of all the products.
      */
-    public void printToString()
+    public void returnAllToString()
     {
        for (Product product : stock)
        {
@@ -190,14 +178,10 @@ public class StockManager
      */
     public void renameName(int id, String replacementName)
     {
-        for (Product product : stock)
-        {
             if (product.id == id)
             {
                 product.changeName(replacementName);
             }
-            
-        }
     }
     
      /**
@@ -263,8 +247,7 @@ public class StockManager
      */
     public void selectAmount(int id, int input)
     {
-        for (Product product : stock)
-        {
+
             if(product.id == id && product.amount == 0)
             {
                 product.getAmount(input);
@@ -281,7 +264,7 @@ public class StockManager
                 "An Error has occured for " + id + 
                 "Please make sure to have an amount more then 0");
             }
-        }
+        
     }
 }
     

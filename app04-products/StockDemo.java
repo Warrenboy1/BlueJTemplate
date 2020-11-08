@@ -13,12 +13,13 @@ public class StockDemo
 {
     // The stock manager.
     private StockManager manager;
+    private Product product; 
 
     /**
      * Create a StockManager and populate it with a few
      * sample products.
      */
-    public StockDemo()
+    public StockDemo(StockManager manager)
     {
         manager = new StockManager();
         manager.addProduct(new Product(132, "Clock Radio"));
@@ -30,7 +31,7 @@ public class StockDemo
         manager.addProduct(new Product(4, "AA Batteries"));
         manager.addProduct(new Product(5, "Sticky Tape"));
         manager.addProduct(new Product(53, "Head and Shoulders"));
-        manager.addProduct(new Product(76, "Deodorant"));
+        manager.addProduct(new Product(76, "Deodorant")); 
     }
     
     /**
@@ -41,8 +42,8 @@ public class StockDemo
     public void demo()
     {
         // Show details of all of the products.
-        manager.printToString(); 
-        // Take delivery of 5 items of one of the products.
+        manager.listAllProducts(); 
+        // Take delivery of 10 items of one of the products.
         manager.delivery(132, 8);
         manager.delivery(37, 3);
         manager.delivery(23, 7);
@@ -53,7 +54,7 @@ public class StockDemo
         manager.delivery(4, 6);
         manager.delivery(76, 4);
         manager.delivery(53, 7);
-        manager.printToString();
+        manager.returnAllToString();
     }
     
     /**
@@ -98,9 +99,14 @@ public class StockDemo
      */
     public Product getProduct(int id)
     {
-        Product product = manager.findProductID(id);  
+        Product product = manager.findProductID(id);
         
-        if(product == null) 
+         if(product.id == id) 
+        {
+            manager.findProductID(id);
+            
+        }
+        else
         {
             System.out.println("Product with ID: " + id +
                                " is not recognised.");

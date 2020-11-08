@@ -1,0 +1,44 @@
+Product product3 = new Product(1, "Playstation 3");
+Product product4 = new Product(2, "dolphin");
+Product product5 = new Product(3, "Cookies");
+StockManager stockMan1 = new StockManager();
+stockMan1.addProduct(product5);
+stockMan1.addProduct(product4);
+stockMan1.addProduct(product3);
+
+stockMan1.delivery(1, 5);
+ID Number: 1,Name: Playstation 3 ,stock level: 5
+stockMan1.delivery(2, 76);
+ID Number: 2,Name: dolphin ,stock level: 76
+stockMan1.delivery(3, 52);
+ID Number: 3,Name: Cookies ,stock level: 52
+
+stockMan1.numberInStock(1)
+    returned int 1
+ID Number: 1,Name: Playstation 3 ,stock level: 5
+
+stockMan1.numberInStock(2)
+ID Number: 2,Name: dolphin ,stock level: 76
+    returned int 2
+
+stockMan1.numberInStock(3)
+ID Number: 3,Name: Cookies ,stock level: 52
+    returned int 3
+
+stockMan1.sellAProduct(3, 48);
+ID Number: 3,Name: Cookies ,stock level: 4
+
+stockMan1.renameName(2, "Whales");
+stockMan1.removeProduct(1);
+    Exception occurred.
+stockMan1.listAllProducts();
+ID Number: 3,Name: Cookies ,stock level: 4
+ID Number: 2,Name: Whales ,stock level: 76
+
+stockMan1.searchProductName("e");
+3: NameCookies ,stock level: 4
+2: NameWhales ,stock level: 76
+
+stockMan1.printStockLevelsLow();
+If no products printed then no products are below 5
+3: NameCookies ,stock level: 4
