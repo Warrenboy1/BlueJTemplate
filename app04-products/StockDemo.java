@@ -7,7 +7,7 @@
  * @version 2016.02.29
  * 
  * modified by: Warren Frank-Danvers.
- * Date: 06/11/2020
+ * Date: 08/11/2020
  */
 public class StockDemo
 {
@@ -21,74 +21,61 @@ public class StockDemo
      */
     public StockDemo(StockManager manager)
     {
-        manager = new StockManager();
-        manager.addProduct(new Product(132, "Clock Radio"));
-        manager.addProduct(new Product(37,  "Mobile Phone"));
-        manager.addProduct(new Product(23,  "Microwave Oven"));
-        manager.addProduct(new Product(1, "Iphone"));
-        manager.addProduct(new Product(2, "Water Bottle"));
-        manager.addProduct(new Product(3, "Playstation 5"));
-        manager.addProduct(new Product(4, "AA Batteries"));
-        manager.addProduct(new Product(5, "Sticky Tape"));
-        manager.addProduct(new Product(53, "Head and Shoulders"));
-        manager.addProduct(new Product(76, "Deodorant")); 
-    }
+        this.manager = manager;
+        manager.addProduct(new Product(0, "Clock Radio"));
+        manager.addProduct(new Product(1,  "Mobile Phone"));
+        manager.addProduct(new Product(2,  "Microwave Oven"));
+        manager.addProduct(new Product(3, "Iphone")); 
+        manager.addProduct(new Product(4, "Water Bottle"));
+        manager.addProduct(new Product(5, "Playstation 5"));
+        manager.addProduct(new Product(6, "AA Batteries"));
+        manager.addProduct(new Product(7, "Sticky Tape"));
+        manager.addProduct(new Product(8, "Head and Shoulders"));
+        manager.addProduct(new Product(9, "Deodorant")); 
+        // Show details of all of the products.
+        manager.listAllProducts();
+    } 
     
     /**
      * Provide a very simple demonstration of how a StockManager
      * might be used. Details of one product are shown, the
      * product is restocked, and then the details are shown again.
      */
-    public void demo()
+    public void demoDeliverProducts()
     {
-        // Show details of all of the products.
-        manager.listAllProducts(); 
         // Take delivery of 10 items of one of the products.
-        manager.delivery(132, 8);
-        manager.delivery(37, 3);
-        manager.delivery(23, 7);
-        manager.delivery(1, 9);
-        manager.delivery(3, 7);
-        manager.delivery(2, 8);
-        manager.delivery(5, 5);
-        manager.delivery(4, 6);
-        manager.delivery(76, 4);
-        manager.delivery(53, 7);
+        manager.delivery(0, 8);
+        manager.delivery(1, 3);
+        manager.delivery(2, 7);
+        manager.delivery(3, 9);
+        manager.delivery(4, 7);
+        manager.delivery(5, 8);
+        manager.delivery(6, 5);
+        manager.delivery(7, 6);
+        manager.delivery(8, 4);
+        manager.delivery(9, 7);
         manager.returnAllToString();
+        System.out.println('\n');
     }
     
-    /**
+     /**
      * Show details of the given product. If found,
      * its name and stock quantity will be shown.
-     * @param id The ID of the product to look for.
+     * @param id The ID of the product to look for. 
      */
     public void showDetails(int id)
     {
-        Product product = getProduct(id);
-        
-        if(product != null) 
-        {
-            System.out.println(product.toString());
-        }
+        manager.findProductID(id);
     }
     
-    /**
-     * Sell one of the given item.
+      /**
+     * Sell an amount of the given item.
      * Show the before and after status of the product.
      * @param id The ID of the product being sold.
      */
-    public void sellAProduct(int id)
+    public void demoSellProducts(int id, int amount)
     {
-        Product product = getProduct(id);
-       
-        
-        if(product != null) 
-        {
-            showDetails(id);
-            product.sellOne();
-            showDetails(id);
-        }
-    
+        manager.sellAProduct(id,amount);
     }
     
     /**
@@ -97,28 +84,110 @@ public class StockDemo
      * @param id The ID of the product.
      * @return The Product, or null if no matching one is found.
      */
-    public Product getProduct(int id)
+    public void demoFindProductID(int id)
     {
-        Product product = manager.findProductID(id);
-        
-         if(product.id == id) 
-        {
-            manager.findProductID(id);
-            
-        }
-        else
-        {
-            System.out.println("Product with ID: " + id +
-                               " is not recognised.");
-        }
-        return product;
-    }
+        manager.findProductID(id);
+    } 
 
     /**
      * @return The stock manager.
      */
-    public StockManager getManager()
+    public StockManager demoGetManager()
     {
         return manager;
+    }
+    
+    /**
+     * Add a product to the list.
+     */
+    public void demoAddProduct(Product name)
+    {
+        manager.addProduct(name);
+    }
+    
+    /**
+     * Remove a product from the list using id.
+     */
+    public void demoRemoveProduct(int id)
+    {
+        manager.removeProduct(id);
+    }
+    
+    /**
+     * search Product Name via a keyword.
+     */
+    public void demoSearchProductName(String keyWord)
+    {
+        manager.searchProductName(keyWord);
+    }
+    
+    
+    /**
+     * All Products get listed.
+     */
+    public void demoListAllProducts()
+    {
+        manager.listAllProducts();
+    }
+    
+    /**
+     * Locate a product with the given ID, and return how
+     * many of this item are in stock. If the ID does not
+     * match any product, return zero.
+     */
+    public void demoNumberInStock(int id)
+    {
+        manager.numberInStock(id);
+    }
+    
+    /**
+     * return details of all the products.
+     */
+    public void demoReturnAllToString()
+    {
+        manager.returnAllToString();
+    }
+    
+    /**
+     * rename product with replacementname.
+     */
+    public void demoRenameName(int id, String replacementName)
+    {
+        manager.renameName(id, replacementName);
+    }
+    
+    /**
+      * Print out Produts with less than 5 as Quantity.
+      */
+    public void demoPrintStockLevelsLow()
+    {
+        manager.printStockLevelsLow();
+    }
+    
+    /**
+     * Increase Quantity of Products with less than 5. increased by 10.
+     */
+    public void demoTopUpWith10()
+    {
+        manager.topUpWith10();
+    }
+    
+    /**
+     * Sell multiple products with the amount within certain products which 
+     * do not have an amount of 0,if they do then the quantity of the product
+     * will be reduced by amount specified.
+     */
+    public void demoSellMultipleProducts()
+    {
+        manager.sellMultipleProducts();
+    }
+    
+    /**
+     * input an ID to set an amount to. 
+     * To sell multiple products at one time instead of selling 1 at a time.
+     */
+    public void demoSelectAmount(int id, int input)
+    {
+        manager.selectAmount(id, input);
     }
 }

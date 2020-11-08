@@ -1,44 +1,150 @@
-Product product3 = new Product(1, "Playstation 3");
-Product product4 = new Product(2, "dolphin");
-Product product5 = new Product(3, "Cookies");
-StockManager stockMan1 = new StockManager();
-stockMan1.addProduct(product5);
-stockMan1.addProduct(product4);
-stockMan1.addProduct(product3);
+StockManager stock = new StockManager();
+StockDemo demo = new StockDemo(stock);
+ID Number: 0,Name: Clock Radio ,stock level: 0
+ID Number: 1,Name: Mobile Phone ,stock level: 0
+ID Number: 2,Name: Microwave Oven ,stock level: 0
+ID Number: 3,Name: Iphone ,stock level: 0
+ID Number: 4,Name: Water Bottle ,stock level: 0
+ID Number: 5,Name: Playstation 5 ,stock level: 0
+ID Number: 6,Name: AA Batteries ,stock level: 0
+ID Number: 7,Name: Sticky Tape ,stock level: 0
+ID Number: 8,Name: Head and Shoulders ,stock level: 0
+ID Number: 9,Name: Deodorant ,stock level: 0
 
-stockMan1.delivery(1, 5);
-ID Number: 1,Name: Playstation 3 ,stock level: 5
-stockMan1.delivery(2, 76);
-ID Number: 2,Name: dolphin ,stock level: 76
-stockMan1.delivery(3, 52);
-ID Number: 3,Name: Cookies ,stock level: 52
 
-stockMan1.numberInStock(1)
-    returned int 1
-ID Number: 1,Name: Playstation 3 ,stock level: 5
+demo.demoDeliverProducts();
+ID Number: 0,Name: Clock Radio ,stock level: 8
+ID Number: 1,Name: Mobile Phone ,stock level: 3
+ID Number: 2,Name: Microwave Oven ,stock level: 7
+ID Number: 3,Name: Iphone ,stock level: 9
+ID Number: 4,Name: Water Bottle ,stock level: 7
+ID Number: 5,Name: Playstation 5 ,stock level: 8
+ID Number: 6,Name: AA Batteries ,stock level: 5
+ID Number: 7,Name: Sticky Tape ,stock level: 6
+ID Number: 8,Name: Head and Shoulders ,stock level: 4
+ID Number: 9,Name: Deodorant ,stock level: 7
 
-stockMan1.numberInStock(2)
-ID Number: 2,Name: dolphin ,stock level: 76
-    returned int 2
 
-stockMan1.numberInStock(3)
-ID Number: 3,Name: Cookies ,stock level: 52
-    returned int 3
+demo.demoSelectAmount(0, 4);
+ID: 0  has been requested for an amount of 4
 
-stockMan1.sellAProduct(3, 48);
-ID Number: 3,Name: Cookies ,stock level: 4
 
-stockMan1.renameName(2, "Whales");
-stockMan1.removeProduct(1);
-    Exception occurred.
-stockMan1.listAllProducts();
-ID Number: 3,Name: Cookies ,stock level: 4
-ID Number: 2,Name: Whales ,stock level: 76
+demo.demoSelectAmount(1, 3);
+ID: 1  has been requested for an amount of 3
 
-stockMan1.searchProductName("e");
-3: NameCookies ,stock level: 4
-2: NameWhales ,stock level: 76
 
-stockMan1.printStockLevelsLow();
+demo.demoSelectAmount(2, 1);
+ID: 2  has been requested for an amount of 1
+
+
+demo.demoSelectAmount(3, 3);
+ID: 3  has been requested for an amount of 3
+
+
+demo.demoSelectAmount(4, 1);
+ID: 4  has been requested for an amount of 1
+
+
+demo.demoSelectAmount(5, 2);
+ID: 5  has been requested for an amount of 2
+
+
+demo.demoSelectAmount(6, 6);
+ID: 6  has been requested for an amount of 6
+
+
+demo.demoSelectAmount(7, 2);
+ID: 7  has been requested for an amount of 2
+
+
+demo.demoSelectAmount(8, 6);
+ID: 8  has been requested for an amount of 6
+
+
+demo.demoSelectAmount(9, 1);
+ID: 9  has been requested for an amount of 1
+
+
+demo.demoSellMultipleProducts();
+ID Number: 0,Name: Clock Radio ,stock level: 4
+ID Number: 1,Name: Mobile Phone ,stock level: 0
+ID Number: 2,Name: Microwave Oven ,stock level: 6
+ID Number: 3,Name: Iphone ,stock level: 6
+ID Number: 4,Name: Water Bottle ,stock level: 6
+ID Number: 5,Name: Playstation 5 ,stock level: 6
+ERROR: Cant sell:  ID Number: 6,Name: AA Batteries ,stock level: 5    Reason: 6 amount requested exceeds quantity in stock of 5
+ID Number: 7,Name: Sticky Tape ,stock level: 4
+ERROR: Cant sell:  ID Number: 8,Name: Head and Shoulders ,stock level: 4    Reason: 6 amount requested exceeds quantity in stock of 4
+ID Number: 9,Name: Deodorant ,stock level: 6
+
+
+stock.renameName(1, "Warren's Android");
+
+
+stock.removeProduct(3);
+
+stock.listAllProducts();
+ID Number: 0,Name: Clock Radio ,stock level: 4
+ID Number: 1,Name: Warren's Android ,stock level: 0
+ID Number: 2,Name: Microwave Oven ,stock level: 6
+ID Number: 4,Name: Water Bottle ,stock level: 6
+ID Number: 5,Name: Playstation 5 ,stock level: 6
+ID Number: 6,Name: AA Batteries ,stock level: 5
+ID Number: 7,Name: Sticky Tape ,stock level: 4
+ID Number: 8,Name: Head and Shoulders ,stock level: 4
+ID Number: 9,Name: Deodorant ,stock level: 6
+
+
+stock.searchProductName("Wa");
+1: NameWarren's Android ,stock level: 0
+4: NameWater Bottle ,stock level: 6
+
+
+stock.searchProductName("Tape");
+7: NameSticky Tape ,stock level: 4
+
+
+stock.printStockLevelsLow();
 If no products printed then no products are below 5
-3: NameCookies ,stock level: 4
+0: NameClock Radio ,stock level: 4
+1: NameWarren's Android ,stock level: 0
+7: NameSticky Tape ,stock level: 4
+8: NameHead and Shoulders ,stock level: 4
+
+
+demo.demoFindProductID(8);
+Item not Found
+Item not Found
+Item not Found
+Item not Found
+Item not Found
+Item not Found
+Item not Found
+ID Number: 8,Name: Head and Shoulders ,stock level: 4
+Item not Found
+
+demo.demoFindProductID(3);
+Item not Found
+Item not Found
+Item not Found
+Item not Found
+Item not Found
+Item not Found
+Item not Found
+Item not Found
+Item not Found
+
+stock.sellAProduct(4, 3);
+ID Number: 4,Name: Water Bottle ,stock level: 3
+
+
+stock.sellAProduct(4, 2);
+ID Number: 4,Name: Water Bottle ,stock level: 1
+
+
+stock.topUpWith10();
+0: NameClock Radio ,stock level: 14
+1: NameWarren's Android ,stock level: 10
+4: NameWater Bottle ,stock level: 11
+7: NameSticky Tape ,stock level: 14
+8: NameHead and Shoulders ,stock level: 14

@@ -5,7 +5,7 @@
  * @version 2016.02.29
  * 
  * modified by: Warren Frank-Danvers.
- * Date: 06/11/2020
+ * Date: 08/11/2020
  */
 public class Product
 {
@@ -81,7 +81,7 @@ public class Product
     public void printProductDetail()
     {
       System.out.println("ID Number: "+ id + ",Name: " +  name + 
-      " ,stock level: " + quantity);
+      " ,stock level: " + quantity );
     }
     
     /**
