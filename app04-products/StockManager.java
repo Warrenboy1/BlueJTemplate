@@ -34,8 +34,13 @@ public class StockManager
      * Remove a product from the list using id.
      */
     public void removeProduct(int id)
+    if(product != null)
     {
            stock.remove(id);
+    }
+    else
+    {
+        System.out.println(id + "does not exist.";
     }
     
     /**
