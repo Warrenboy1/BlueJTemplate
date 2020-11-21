@@ -4,36 +4,27 @@
  * stock manager so that users can add, edit,
  * print and remove stock products
  *
- * @author Student Name
+ * @author Warren Frank-Danvers
  * @version 0.1
  */
 public class StockApp
 {
+    public static final char CLEAR_CODE = '\u000C';
+    
+    public static final String QUIT = "quit";
+    public static final String ADD = "add";
+    public static final String PRINT_ALL = "printall";
+    
     // Use to get user input
-    private InputReader input;
+    private InputReader input = new InputReader();
+    private StockManager manager = new StockManager();
+    private StockDemo demo = new StockDemo(manager);
+     
+ 
     
-    /**
-     * Constructor for objects of class StockApp
-     */
-    public StockApp()
+    public void run() 
     {
-        input = new InputReader();
-    }
-
-    /**
-     * 
-     */
-    public void run()
-    {
-        printHeading();
-        getMenuChoice();
-    }
-    
-    /**
-     * 
-     */
-    public void getMenuChoice()
-    {
+        //System.out.println(CLEAR_CODE);
         boolean finished = false;
         
         while(!finished)
@@ -41,11 +32,45 @@ public class StockApp
             printHeading();
             printMenuChoices();
            
-            String choice = input.getInput();
-            finished = true;
+            String choice = input.getString().toLowerCase();
+            
+            if(choice.equals(QUIT))
+                 finished = true;
+            else     
+                 executeMenuChoice(choice);
+        }
+    }
+   
+    private void executeMenuChoice(String choice)
+    {
+        if(choice.equals(ADD))
+        {
+            addProduct(); 
+        }
+        else if(choice.equals(PRINT_ALL))
+        {
+            manager.listAllProducts();
+            String value = input.getString();
         }
     }
     
+    private void addProduct()
+    {
+        System.out.println("Adding new product\n");
+        
+        System.out.println("Please enter the product ID");
+        String value = input.getString();
+        int id = Integer.parseInt(value);
+        
+        System.out.println("Please enter the name of the product");
+        String name = input.getString();
+        
+        Product product = new Product(id, name);
+        manager.addProduct(product);
+        
+        
+        System.out.println();
+    }
    
     /**
      * Print out a menu of operation choices
@@ -65,9 +90,12 @@ public class StockApp
      */
     private void printHeading()
     {
+        
         System.out.println("******************************");
         System.out.println(" Stock Management Application ");
-        System.out.println("    App05: by Student Name");
+        System.out.println("    App05: by Warren Frank-Danvers");
         System.out.println("******************************");
     }
+    
+    
 }
