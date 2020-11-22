@@ -27,7 +27,7 @@ public class StockManager
      */
     public boolean addProduct(Product name)
     {
-        if(findProductID(name.getID()) != null) 
+            if(findProductID(name.getID()) != null) 
         {
             System.out.println("This Product has an duplicated ID");
             return false;
@@ -35,7 +35,7 @@ public class StockManager
         else
         {
             stock.add(name);
-            System.out.println("\n You have added " + product);
+            System.out.println("\n You have added ID: " + name);
             return true;
         }
     }
@@ -45,7 +45,24 @@ public class StockManager
      */
     public void removeProduct(int id)
     {
-        stock.remove(id);
+        for (Product product : stock)
+        
+        {   if(product.id == id) 
+            {
+                stock.remove(product);
+                System.out.println("\n You have removed ID: " + product);
+            }
+        }
+        //removeIf(product -> product.getID().equals(id));
+    } 
+    
+    public void removeProductt(int id)
+    {
+        Product product = findProductID(id);
+        if (product != null)
+        {
+            stock.remove(product);
+        }
     }
     
     /**
@@ -123,15 +140,17 @@ public class StockManager
            {
                product.printProductDetail();
            }
-           //else if(product.id != id)
+           else if(product.id != id)
            {
-               System.out.println("Item not Found");
+               return null;
            }
         }
         
         System.out.println('\n');
         return product;
     }
+    
+    
     
     /**
      * All Products get listed.
@@ -281,6 +300,8 @@ public class StockManager
         } 
         System.out.println('\n');
     }
+    
+    
 }
     
 

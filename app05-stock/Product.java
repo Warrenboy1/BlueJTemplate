@@ -72,7 +72,7 @@ public class Product
      */
     public String toString()
     {
-        return id + ": Name" +  name + " ,stock level: " + quantity;
+        return id + ": Name: " +  name + " ,stock level: " + quantity;
     }
 
     /**

@@ -14,6 +14,7 @@ public class StockApp
     public static final String QUIT = "quit";
     public static final String ADD = "add";
     public static final String PRINT_ALL = "printall";
+    public static final String REMOVE = "remove";
     
     // Use to get user input
     private InputReader input = new InputReader();
@@ -24,7 +25,7 @@ public class StockApp
     
     public void run() 
     {
-        //System.out.println(CLEAR_CODE);
+        System.out.println(CLEAR_CODE);
         boolean finished = false;
         
         while(!finished)
@@ -50,8 +51,26 @@ public class StockApp
         else if(choice.equals(PRINT_ALL))
         {
             manager.listAllProducts();
-            String value = input.getString();
         }
+        else if(choice.equals(REMOVE))
+        {
+            removeProduct();
+        }
+    }
+    
+    private void removeProduct()
+    {
+        System.out.println("Removing a Product\n");
+        
+        System.out.println("Please enter the product ID");
+        String value = input.getString();
+        int id = Integer.parseInt(value);
+        
+        manager.removeProduct(id);
+        
+        manager.listAllProducts();
+        
+        System.out.println();
     }
     
     private void addProduct()
