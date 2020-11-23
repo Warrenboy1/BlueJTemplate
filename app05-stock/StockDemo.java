@@ -157,11 +157,11 @@ public class StockDemo
     }
     
     /**
-      * Print out Produts with less than 5 as Quantity.
+      * Print out Produts with less than "number" as Quantity.
       */
-    public void demoPrintStockLevelsLow()
+    public void demoPrintStockLevelsLow(int number)
     {
-        manager.printStockLevelsLow();
+        manager.printStockLevelsLow(number);
     }
     
     /**

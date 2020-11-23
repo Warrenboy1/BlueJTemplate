@@ -15,6 +15,10 @@ public class StockApp
     public static final String ADD = "add";
     public static final String PRINT_ALL = "printall";
     public static final String REMOVE = "remove";
+    public static final String DELIVER = "deliver";
+    public static final String SELL = "sell";
+    public static final String SEARCH = "search";
+    public static final String LOW_STOCK = "lowstock";
     
     // Use to get user input
     private InputReader input = new InputReader();
@@ -56,6 +60,22 @@ public class StockApp
         {
             removeProduct();
         }
+        else if(choice.equals(DELIVER))
+        {
+            delivery();
+        }
+        else if(choice.equals(SELL))
+        {
+            sell();
+        }
+        else if(choice.equals(SEARCH))
+        {
+            search();
+        }
+        else if(choice.equals(LOW_STOCK))
+        {
+            lowStock();
+        }
     }
     
     private void removeProduct()
@@ -90,6 +110,65 @@ public class StockApp
         
         System.out.println();
     }
+    
+    private void delivery()
+    {
+        System.out.println("Deliver new products\n");
+        
+        System.out.println("Please enter the product ID to be delivered");
+        String value = input.getString();
+        int id = Integer.parseInt(value);
+        
+        System.out.println("please enter the name of the product");
+        String worth = input.getString();
+        int quantity = Integer.parseInt(worth);
+        
+        manager.delivery(id, quantity);
+        
+        System.out.println();
+    }
+    
+    private void sell()
+    {
+        System.out.println("Sell a product");
+        
+        System.out.println("Please enter the product ID to be sold");
+        String value = input.getString();
+        int id = Integer.parseInt(value);
+        
+        System.out.println("Please enter the amount sold");
+        String worth = input.getString();
+        int amount = Integer.parseInt(worth);
+        
+        manager.sellAProduct(id, amount);
+        
+        System.out.println();
+    }
+    
+    private void search()
+    {
+        System.out.println("Search for a product");
+        
+        System.out.println("Please enter the name of the product");
+        String keyWord = input.getString();
+        
+        manager.searchProductName(keyWord);
+        
+        System.out.println();
+    }
+    
+    private void lowStock()
+    {
+        System.out.println("Printing low stock");
+        
+        System.out.println("Enter the number for how many products you want to see are low in stock");
+        String low = input.getString();
+        int number = Integer.parseInt(low);
+        
+        manager.printStockLevelsLow(number);
+        
+        System.out.println();
+    }
    
     /**
      * Print out a menu of operation choices
@@ -101,6 +180,10 @@ public class StockApp
         System.out.println("    Remove:     Remove an old product");
         System.out.println("    PrintAll:   Print all products");
         System.out.println("    Quit:       Quit the program");
+        System.out.println("    Deliver:    Deliver a product");
+        System.out.println("    Sell:       Sell a product");
+        System.out.println("    Search:     Search for a product");
+        System.out.println("    LowStock:   Print all product with low stock");
         System.out.println();        
     }
     

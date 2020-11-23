@@ -40,28 +40,16 @@ public class StockManager
         }
     }
     
-    /**
+     /**
      * Remove a product from the list using id.
      */
     public void removeProduct(int id)
     {
-        for (Product product : stock)
-        
-        {   if(product.id == id) 
-            {
-                stock.remove(product);
-                System.out.println("\n You have removed ID: " + product);
-            }
-        }
-        //removeIf(product -> product.getID().equals(id));
-    } 
-    
-    public void removeProductt(int id)
-    {
         Product product = findProductID(id);
         if (product != null)
         {
-            stock.remove(product);
+         stock.remove(product);
+         System.out.println("\n You have removed ID: " + product);
         }
     }
     
@@ -82,9 +70,9 @@ public class StockManager
             }
             else if (product.id == id && amount > product.quantity)
             {
-                System.out.println("Quantity is: " + product.quantity + 
-                "compared to amount selected for purchase: " + product.amount + " for ID: " +
-                product.id);
+              System.out.println("Quantity is: " + product.quantity + 
+              "compared to amount selected for purchase: " + product.amount + " for ID: " +
+              product.id);
             }
         }
         System.out.println('\n');
@@ -106,7 +94,6 @@ public class StockManager
             {
               product.increaseQuantity(quantity);
               product.printProductDetail();
-              
             }
         }
     }
@@ -138,16 +125,12 @@ public class StockManager
         {
            if (product.id == id)
            {
-               product.printProductDetail();
-           }
-           else if(product.id != id)
-           {
-               return null;
+               return product;
            }
         }
         
         System.out.println('\n');
-        return product;
+        return null;
     }
     
     
@@ -219,13 +202,12 @@ public class StockManager
      /**
       * Print out Produts with less than 5 as Quantity.
       */
-     public void printStockLevelsLow ()
+     public void printStockLevelsLow (int number)
     {
-        System.out.println
-        ("If no products printed then no products are below 5");
+        
         for (Product product : stock) 
         {
-            if (product.getQuantity() <5)
+            if (product.getQuantity() <number)
             {
                 System.out.println(product); 
             }
@@ -300,8 +282,6 @@ public class StockManager
         } 
         System.out.println('\n');
     }
-    
-    
 }
     
 
