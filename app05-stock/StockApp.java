@@ -19,6 +19,7 @@ public class StockApp
     public static final String SELL = "sell";
     public static final String SEARCH = "search";
     public static final String LOW_STOCK = "lowstock";
+    public static final String RE_STOCK = "restock";
     
     // Use to get user input
     private InputReader input = new InputReader();
@@ -75,6 +76,10 @@ public class StockApp
         else if(choice.equals(LOW_STOCK))
         {
             lowStock();
+        }
+        else if(choice.equals(RE_STOCK))
+        {
+            reStock();
         }
     }
     
@@ -166,6 +171,19 @@ public class StockApp
         int number = Integer.parseInt(low);
         
         manager.printStockLevelsLow(number);
+        
+        System.out.println();
+    }
+    
+    private void reStock()
+    {
+        System.out.println("ReStock products")
+        
+        System.out.println("Enter a number for how many products you want which are lowstock to be restocked by 10")
+        String stock = input.getString();
+        int number = Integer.parseInt(stock);
+        
+        manager.topUpWith10(number);
         
         System.out.println();
     }
