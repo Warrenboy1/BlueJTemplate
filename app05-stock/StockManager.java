@@ -219,11 +219,11 @@ public class StockManager
     /**
      * Increase Quantity of Products with less than 5. increased by 10.
      */
-    public void topUpWith10 ()
+    public void topUpWith10 (int number)
     {
         for (Product product : stock)
         {
-            if (product.getQuantity() < 5)
+            if (product.getQuantity() < number)
             {
                 product.increaseQuantity(10);
                 System.out.println(product);
