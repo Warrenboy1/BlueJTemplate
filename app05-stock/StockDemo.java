@@ -167,9 +167,9 @@ public class StockDemo
     /**
      * Increase Quantity of Products with less than 5. increased by 10.
      */
-    public void demoTopUpWith10()
+    public void demoTopUpWith10(int number)
     {
-        manager.topUpWith10();
+        manager.topUpWith10(number);
     }
     
     /**
