@@ -51,6 +51,10 @@ public class StockManager
          stock.remove(product);
          System.out.println("\n You have removed ID: " + product);
         }
+        else
+        {
+            System.out.println("ERROR product not found");
+        }
     }
     
     /**
@@ -71,8 +75,12 @@ public class StockManager
             else if (product.id == id && amount > product.quantity)
             {
               System.out.println("Quantity is: " + product.quantity + 
-              "compared to amount selected for purchase: " + product.amount + " for ID: " +
+              ", compared to amount selected for purchase: " + amount + " for ID: " +
               product.id);
+            }
+            else if(amount < 0)
+            {
+                System.out.println("Do not enter a negative amount thank you");
             }
         }
         System.out.println('\n');

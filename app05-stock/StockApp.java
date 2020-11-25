@@ -124,7 +124,7 @@ public class StockApp
         String value = input.getString();
         int id = Integer.parseInt(value);
         
-        System.out.println("please enter the name of the product");
+        System.out.println("please enter the amount to be added by");
         String worth = input.getString();
         int quantity = Integer.parseInt(worth);
         
@@ -177,9 +177,9 @@ public class StockApp
     
     private void reStock()
     {
-        System.out.println("ReStock products")
+        System.out.println("ReStock products");
         
-        System.out.println("Enter a number for how many products you want which are lowstock to be restocked by 10")
+        System.out.println("Enter a number for how many products you want which are lowstock to be restocked by 10");
         String stock = input.getString();
         int number = Integer.parseInt(stock);
         
@@ -202,7 +202,7 @@ public class StockApp
         System.out.println("    Sell:       Sell a product");
         System.out.println("    Search:     Search for a product");
         System.out.println("    LowStock:   Print all product with low stock");
-        System.out.println("    ReStock:    Restock low products")
+        System.out.println("    ReStock:    Restock low products");
         System.out.println();        
     }
     
