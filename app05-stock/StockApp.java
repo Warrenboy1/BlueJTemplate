@@ -9,25 +9,31 @@
  */
 public class StockApp
 {
-    public static final char CLEAR_CODE = '\u000C';
+    public static final char CLEAR_CODE = '\u000C';// Clears the code in terminal window.
     
-    public static final String QUIT = "quit";
-    public static final String ADD = "add";
-    public static final String PRINT_ALL = "printall";
-    public static final String REMOVE = "remove";
-    public static final String DELIVER = "deliver";
-    public static final String SELL = "sell";
-    public static final String SEARCH = "search";
-    public static final String LOW_STOCK = "lowstock";
-    public static final String RE_STOCK = "restock";
+    public static final String QUIT = "quit";   //Quit Application
+    public static final String ADD = "add";   //Add Product using input 'add' within terminal window
+    public static final String PRINT_ALL = "printall";  //print Product using input 'printall'
+    public static final String REMOVE = "remove";   //Remove product using input 'remove'
+    public static final String DELIVER = "deliver";     //Deliver products using input 'deliver'    
+    public static final String SELL = "sell";   //Sell products using input 'sell'
+    public static final String SEARCH = "search";   //Search for products using input 'search'
+    public static final String LOW_STOCK = "lowstock";  //prints lowstock items
+    public static final String RE_STOCK = "restock";    //Restocks items
     
     // Use to get user input
     private InputReader input = new InputReader();
+    // Class StockManager name is also 'manager'
     private StockManager manager = new StockManager();
+    // Class StockDemo name is also 'demo'
     private StockDemo demo = new StockDemo(manager);
-     
- 
-    
+    /**
+     * Everytime Constructor runs, the terminal window is cleared incase of previous information was stored, then boolean finished is set to false and while that is
+     * still false the program will run with whatever input the user has the matches the strings made/what printMenuChoices() has listed. Otherwise the boolean finished
+     * is set to true thus ending the program.
+     * 
+     * Else the user input automatically switches to lowercase in the case that the user input involves UpperCase
+     */
     public void run() 
     {
         System.out.println(CLEAR_CODE);
@@ -40,49 +46,80 @@ public class StockApp
            
             String choice = input.getString().toLowerCase();
             
-            if(choice.equals(QUIT))
-                 finished = true;
+            if(choice.equals(QUIT)) 
+                 finished = true;   //Ends the program if user input 'quit'
             else     
-                 executeMenuChoice(choice);
+                 executeMenuChoice(choice);  //execute the choice if matches the method.
         }
     }
    
+    /**
+     *  Executes menu choice depending on what the user inputs, as long as it matches, the method will run.
+     */
     private void executeMenuChoice(String choice)
     {
         if(choice.equals(ADD))
         {
-            addProduct(); 
+            addProduct();  //Add the product
         }
         else if(choice.equals(PRINT_ALL))
         {
-            manager.listAllProducts();
+            manager.listAllProducts();  //Print all product details
         }
         else if(choice.equals(REMOVE))
         {
-            removeProduct();
+            removeProduct();    //Remove the product from list
         }
         else if(choice.equals(DELIVER))
         {
-            delivery();
+            delivery();     //deliver the products
         }
         else if(choice.equals(SELL))
         {
-            sell();
+            sell();     //sell the products
         }
         else if(choice.equals(SEARCH))
         {
-            search();
+            search();       //search products
         }
         else if(choice.equals(LOW_STOCK))
         {
-            lowStock();
+            lowStock();     //print lowstock products
         }
         else if(choice.equals(RE_STOCK))
         {
-            reStock();
+            reStock();      //restock products which are at a certain amount
         }
     }
     
+    /**
+     * Add a product using input for id, parse into a string, and then
+     * another input for string name, thus making the id and the name for
+     * the new product to be made. Lastly print out the product to make sure 
+     * it has been created correctly.
+     */
+    private void addProduct()
+    {
+        System.out.println("Adding new product\n");
+        
+        System.out.println("Please enter the product ID");
+        String value = input.getString(); //take in input from user to String
+        int id = Integer.parseInt(value); //changes String into Int id
+        
+        System.out.println("Please enter the name of the product");
+        String name = input.getString(); //take in input from user to String
+        
+        Product product = new Product(id, name); //uses Int id and String name 
+                                                 //to create new product
+                                                 
+        manager.addProduct(product); //adds the product just created into an
+                                    //arraylist named stock in class manager
+        System.out.println();
+    }
+    
+    /**
+     * remove product using int id, parse into a String from input id.
+     */
     private void removeProduct()
     {
         System.out.println("Removing a Product\n");
@@ -98,24 +135,10 @@ public class StockApp
         System.out.println();
     }
     
-    private void addProduct()
-    {
-        System.out.println("Adding new product\n");
-        
-        System.out.println("Please enter the product ID");
-        String value = input.getString();
-        int id = Integer.parseInt(value);
-        
-        System.out.println("Please enter the name of the product");
-        String name = input.getString();
-        
-        Product product = new Product(id, name);
-        manager.addProduct(product);
-        
-        
-        System.out.println();
-    }
-    
+    /**
+     * Deliver products using delivery method from manager, inputing quantity 
+     * and id
+     */
     private void delivery()
     {
         System.out.println("Deliver new products\n");
